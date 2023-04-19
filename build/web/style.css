@@ -1,0 +1,39 @@
+body {
+    background-color: LightSkyBlue;
+    font-family: "Times New Roman", sans-serif;
+}
+
+h1 {
+    background-color: DeepSkyBlue;
+    color: dark;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+h3 {
+    margin-left: 40px;
+}
+
+th {
+    background-color:DeepSkyBlue;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+nav img {
+	width: auto;
+}
+.info{
+	text-align:center;
+	word-wrap: break-word;
+}
+
+#vid{
+	width: 200px;
+	height: auto;
+}

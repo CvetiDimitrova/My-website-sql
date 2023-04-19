@@ -4,6 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/cveti/NetBeansProjects/My-website-sql/web/index.html</file>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/web/register.html</file>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/java/RegisterServlet.java</file>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/web/login.html</file>
             <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/java/LoginServlet.java</file>
         </group>
     </open-files>

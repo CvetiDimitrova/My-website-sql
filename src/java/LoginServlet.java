@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -34,6 +35,9 @@ public class LoginServlet extends HttpServlet {
             if(rs.getString(1).equals("1")) {
                 if(rs1.getString(1).equals(pass)) {
                     response.getWriter().println("Login successful");
+            Cookie c = new Cookie("name", name);
+            response.addCookie(c);
+            response.sendRedirect("index.html");
                 } else response.getWriter().println("Login failed");
             } else response.getWriter().println("Login failed");
             

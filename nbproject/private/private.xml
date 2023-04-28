@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/java/itemServlet.java</file>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/java/RegisterServlet.java</file>
             <file>file:/home/cveti/NetBeansProjects/My-website-sql/web/META-INF/context.xml</file>
-            <file>file:/home/cveti/NetBeansProjects/My-website-sql/web/picnic.css</file>
-            <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/conf/MANIFEST.MF</file>
-            <file>file:/home/cveti/NetBeansProjects/My-website-sql/nbproject/build-impl.xml</file>
+            <file>file:/home/cveti/NetBeansProjects/My-website-sql/src/java/LoginServlet.java</file>
         </group>
     </open-files>
 </project-private>

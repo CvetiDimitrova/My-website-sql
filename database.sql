@@ -6,7 +6,7 @@ CREATE TABLE artikuli (id INT, vid VARCHAR(255), marka VARCHAR(255), snimka VARC
 CREATE TABLE potrebiteli (name VARCHAR(255), pass VARCHAR(255), mail VARCHAR(255) );
 
 INSERT INTO artikuli VALUES 
-	(1, "klimatik", "daikin" , "ac.jpg", "Климатика е удобство,което си заслужава", 960, "3 godini"), 
+	(1, "klimatik", "daikin" , "ac.jpg", "Климатика е удобство,което си заслужава", 960, "3 "), 
 	(2, "vrati", "darveni" , "Door.jpg", "Разнообразие от врати", 589, "1 godina"), 
 	(3, "shtori", "wertikalni" , "R.jpg", "Какво по - хубаво от стая с добре сложени щори", 330, "3 godini"), 
 	(4, "dograma", "pvc" , "pvc.jpg", "PVC и алуминиева", 710, "4 godini");

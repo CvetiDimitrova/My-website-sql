@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -28,20 +27,87 @@ public class itemServlet extends HttpServlet {
                 name = c.getValue();
             }
         }
+       
         
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mariadb://localhost/mmc");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(String.format("SELECT * FROM artikuli"));
+            conn.close();
+            Object items = null;
+            
+            while(rs.next()) {
+                int id = rs.getInt(1);
+                String vid = rs.getString(2);
+                String marka = rs.getString(3);
+                String snimka = rs.getString(4);
+                String opisanie = rs.getString(5);
+                int cena = rs.getInt(6);
+                String garancia = rs.getString(7);
+                items += """
+                       
+                               <div>
+                                 <article class="card">
+                                   <img src="%s">
+                                   <footer>
+                                     <h3>%s</h3>
+                                         <p>%s</p>
+                                         <p>%s</p>
+                                     <button>Like</button>
+                                   </footer>
+                                 </article>
+                               </div>
+                         """.formatted(snimka,marka,opisanie,cena,garancia);
+            }
+            
+            String webpage = """
+                             <!DOCTYPE html>
+                             <html>
+                             	<head>
+                                           <meta charset="utf8">
+                             	<title>Shtori i dograma</title>
+                             	<link rel="icon" type="image/x-icon" href="photos/1.jpg">
+                             	<meta name="viewport" content="width=device-width" initial-scale="1">
+                             	<link rel="stylesheet" href="picnic.css">
+                             	<link rel="stylesheet" href="style.css">
+                             </head>
+                             	<body>
+                             		<nav>
+                             	<a href="index.html" class="brand">
+                             		<img class="logo" src="photos/1.jpg" />
+                             		<span>ММC klima</span>
+                             	</a>
+                             
+                             	<!-- responsive-->
+                             	<input id="bmenub" type="checkbox" class="show">
+                             	<label for="bmenub" class="burger pseudo button">menu</label>
+                             
+                             	<div class="menu">
+                             		
+                             		  <a href="index.html" class="pseudo button icon-picture">Начало</a>
+                             		
+                             		
+                             		<a href="klimatici.html" class="pseudo button icon-picture">Климатици</a>
+                             		<a href="vrati.html" class="button icon-puzzle">Врати</a>
+                             		<a href="shtoriidograma.html" class="pseudo button icon-picture">Щори и Дограма</a>
+                             	</div>
+                                    </nav>
+                                        <div class="flex two">
+                                                %s
+                                         </div>
+                                    </body>
+                            </html>                         
+                             """.formatted(items);
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(itemServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(itemServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        String webpage = """
-                         <!DOCTYPE html>
-                         <html>
-                            <head>
-                            </head>
-                            <body>
-                                Zdrasti %s
-                            </body>
-                         <html>
-                         """.formatted(name);
                          
-        response.getWriter().println(webpage);
+        response.getWriter().println("");
         
     }
 }
